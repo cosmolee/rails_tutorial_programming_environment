@@ -8,11 +8,11 @@ If you wish to use the Linux environment for more than the development purposes 
 
 I've tested the instructions extensively by starting from scratch Ubuntu installs and executing the instructions line by line.  You may be able to get the environment set up on an existing Ubuntu installation.  Worst-case, if you start with a clean install of Ubuntu 10.04, perhaps on a separate drive partition or a virtual machine, and follow these instructions exactly, you will have a functional "ROR 3 Tutorial" environment.  This just works.
 
-You still have to do the configuration per the book for GIT and Heroku (Chap. 1), but the required software to do the exercizes will already be installed, and the resulting programming environment is very nice to work with.  I tried to install all the software required for the exercizes, but as of this writing, I still have not yet gotten past Chapter 3, since all the problems that I encountered side-tracked me into this project.  Please let me know if I've left anything out or if you have any problems I should know about...
+You still have to do the configuration per the book for GIT and Heroku (Chap. 1), but the required software to do the exercises will already be installed, and the resulting programming environment is very nice to work with.  I tried to install all the software required for the exercises, but as of this writing, I still have not yet gotten past Chapter 3, since all the problems that I encountered side-tracked me into this project.  Please let me know if I've left anything out or if you have any problems I should know about...
 
 My next part of this project is to create a fully complete bootable development environment that has all these steps already done, which can be run from a flash drive.  Just plug in the flash drive and boot.  None of the installation or configuration business required.  If that appeals to you, look for that in the future...
 
-If you have any issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing your issue, and hence, more likelyhood that you'll get help.  
+If you have any issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing your issue, and hence, more likelihood that you'll get help.  
 
 
 -Cosmo Lee
@@ -23,13 +23,22 @@ If you have any issues, please post to the GetSatisfaction thread, where there a
 
 If you are a Windows user having problems setting up a satisfactory ROR environment, or are simply looking for an easy setup, you can load Ubuntu with the Ubuntu "Windows Installer". This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you probably have a solution with less friction than trying to load the environment natively and having to figure out all the dependencies on your own.  
 
-Note: The Windows Installer option has been known to have issues booting Linux if you have multiple operating systems installed on various partitions on your hard drive.  If you only have Windows installed on your drive, you'll probably be OK.  YMMV.  But it's pretty painless to give it a try and see if it will work for you.  If it doesn't work, you simply uninstall Ubuntu from your Windows application programs.  If you can't get the Ubuntu "inside" Windows option to work, you still have as a fallback the option of installing Ubuntu to a separate partition on your hard drive.  
+Note: The Windows Installer option has been known to have issues booting Linux if you have multiple operating systems installed on various partitions on your hard drive.  If you only have Windows installed on your drive, you'll probably be OK.  YMMV.  But it's pretty painless to give it a try and see if it will work for you.  If it doesn't work, you simply uninstall Ubuntu from your Windows application programs.  If you can't get the Ubuntu "inside" Windows option to work, you still have as a fall back the option of installing Ubuntu to a separate partition on your hard drive.  
 
 To install to a separate partition, install Ubuntu from a DVD and the install process will walk you through creating a new partition.  If you haven't already installed Windows, but are planning on running both Windows and Linux together on the same hard drive in separate respective partitions, you should install Windows first.  Windows has been known to not play nice with other operating systems and blow away the ability to boot the other operating system upon a new install.  
 
 Since these options are based on Open Source software, they cost you nothing to try.  
 
-Note: the lines below that start with the "$" sign are commands that are to be executed at the command line from a terminal.  The "$" sign is analagous to the DOS "C:>" prompt; you don't actually type "$" when you execute the commands.  
+Note: the lines below that start with the "$" sign are commands that are to be executed at the command line from a terminal.  The "$" sign is analogous to the DOS "C:>" prompt; you don't actually type "$" when you execute the commands.  If you see the "#" character, it and the following text are comments, so don't include that as part of the command.  
+
+So if you see:
+
+	$ echo howdy	#Echo the word howdy
+
+You only actually type at the command line:
+
+	echo howdy
+
 
 *** End of Windows notes ***
 
@@ -60,7 +69,7 @@ Update package list:
 
 Install various required Linux packages:
 
-	$ sudo apt-get install zlib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs
+	$ sudo apt-get install lib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs
 
 
 
@@ -95,7 +104,7 @@ When you start using multiple gemsets, it's easy to lose track of which gemset y
 
 	$ type rvm | head -1
 
-Should result in this ouput: 
+Should result in this output: 
 
 	rvm is a function
 
@@ -148,7 +157,7 @@ Make a directory for your Rails projects:
 
 Create Rails app (Chap 3):
 
-This is the first exercize in the book in Chapter 3.  Here we set up the environment that you'll be using for the main book project.  When you later follow along in the book and come to this chapter, *remember that you've already done this*.  Otherwise, you'll blow away the work you're about to do and will have to re-do these steps.  So DON'T repeat the following commands.  You might want to write a sticky note and place it in the book or on your screen so you won't forget.  If you do forget and try to re-create the project, Rails will give you an Overwrite warning that you are about to do so.  If so, type "q" at the prompt to exit the process.
+This is the first exercise in the book in Chapter 3.  Here we set up the environment that you'll be using for the main book project.  When you later follow along in the book and come to this chapter, *remember that you've already done this*.  Otherwise, you'll blow away the work you're about to do and will have to re-do these steps.  So DON'T repeat the following commands.  You might want to write a sticky note and place it in the book or on your screen so you won't forget.  If you do forget and try to re-create the project, Rails will give you an Overwrite warning that you are about to do so.  If so, type "q" at the prompt to exit the process.
 
 	$ rails new sample_app -T
 	$ cd sample_app
@@ -165,6 +174,9 @@ Create bundle for project:
 
 	$ bundle install
 
+	...
+
+	Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
 
 
 
@@ -181,7 +193,7 @@ Edit sample_app/.rspec file in Rails project root directory.  Replace that with 
 
 
 
-This is an exercize in the book, chap 3.  We'll run it to test that we've got functionality:
+This is an exercise in the book, chap 3.  We'll run it to test that we've got functionality:
 	
 	$ rails generate controller Pages home contact
 
@@ -189,7 +201,11 @@ This is an exercize in the book, chap 3.  We'll run it to test that we've got fu
 You should be able to run rspec tests successfully:
 
 	$ rspec spec/
+	
+	...
 
+	Finished in 0.28896 seconds
+	5 examples, 0 failures, 3 pending
 
 
 
@@ -203,20 +219,26 @@ Set up Spork:
 Edit sample_app/spec/spec_helper.rb file per listing 3.12.  Replace that with repository file.
 
 
-Edit sample_app/config/application.rb per listing 3.13.  Replace that with repository file.
+Edit sample_app/config/application.rb per listing 3.13.  Replace that with repository file.  Note: if you are using this file for other then sample_app, you must change the module name in the file to reflect the project name.
 
 
 
 
-We're ready to see the improved runtime of our tests.  Get a baseline on test time (Ignore the "No DRb server" warning):
+We're ready to see the improved runtime of our tests.  Get a baseline on test time:
 
 	$ cd ~/rails_projects/sample_app	#Change to project root directory before running rspec
-	$ time rspec spec/
-
+	$ time rspec spec/			#Ignore the "No DRb server" warning
 
 Open up *another* terminal tab <shift+ctrl+T> and run Spork.  
 
 	$ spork
+
+	...
+
+	Loading Spork.prefork block...
+	Spork is ready and listening on 8989!
+       
+
 
 After you see the "Spork is ready and listening" message, switch back to the previous terminal tab to run fast tests. Note difference in test times.  Much faster!  
 
@@ -236,11 +258,18 @@ You may now run autotest (Chap 3).  You will see some errors about variables (se
 
 	$ autotest
 
+	...
+
+	Finished in 0.26421 seconds
+	5 examples, 0 failures, 3 pending
+
+	# Waiting since 2011-01-22 21:34:59
+
 
 
 Autotest will do an initial run of your tests, when it finishes, you will see a Growl notification of the test run.
 
-If you go to another terminal screen and edit a monitored file in the project, then save it, you will then see a notification that autotest has detected a file change and is running the tests automatically. Try just adding a trivial extra space to sample_app/app/controllers/pages_controller.rb, then saving it.  You should see a notification pop up when you save the file.  If you switch to the terminal tab where you ran autotest, you will see that it is running the rspec tests for that file.
+If you go to another terminal screen and edit a monitored file in the project, then save it, you will then see a Growl notification that autotest has detected a file change and is running the tests automatically. Try just adding a trivial extra space to sample_app/app/controllers/pages_controller.rb, then saving it.  You should see a notification pop up when you save the file.  If you switch to the terminal tab where you ran autotest, you will see that it is running the rspec tests for that file.
 
 
 SWEET! DONE!!
@@ -256,7 +285,7 @@ SWEET! DONE!!
 
 #Not actually a bug, but Spork pre-loads some files in order to run tests fast.  But if you make changes to these files, they won't be noticed.  If you find that you keep getting an error from the tests, but you are sure that your code was correct, you may be editing a pre-loaded file.  
 
-An example of this happens in exercize 3.18.  You are instructed to edit config/routes.rb and app/controller/pages_controller.rb.  However, when the tests run, an error gets thrown saying there isn't a route to controller: page, action:about.  This is because Spork did not register the change to routes.rb because it was preloaded.  In order to have this register you must kill and restart Spork.  
+An example of this happens in exercise 3.18.  You are instructed to edit config/routes.rb and app/controller/pages_controller.rb.  However, when the tests run, an error gets thrown saying there isn't a route to controller: page, action:about.  This is because Spork did not register the change to routes.rb because it was preloaded.  In order to have this register you must kill and restart Spork.  
 
 To see which files Spork pre-loads, run `spork --diagnose`
 
@@ -311,7 +340,7 @@ GIT and Heroku have been installed, however:
 
 #Alas, the same cannot be said of the .rspec file.  You must have it in the project root directory.  
 
-#Keep a mental note, as mentioned in Chap. 3, that as presently configured, Autotest doesn't run the tests when you modify views - it only notifies you of the file change.  Modify the view's corresponding controller file if you want the autotests to be run.  You can also run `rspec spec/` manually from the command line, even if autotest is also running.  
+#Keep a mental note, as mentioned in Chap. 3, that as presently configured, Autotest doesn't run the tests when you modify views - it only notifies you of the file change.  Modify the view's corresponding controller file if you want the tests to be run.  You can also run `rspec spec/` manually from the command line, even if autotest is also running.  
 
 
 
