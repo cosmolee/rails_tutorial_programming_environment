@@ -366,4 +366,4 @@ GIT and Heroku have been installed, however:
 		$ heroku db:push	#Do this to optionally push your local DB data to Heroku
 
 
-HAPPY CODING!!
+HAPPY CODING!
