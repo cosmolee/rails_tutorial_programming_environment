@@ -12,7 +12,9 @@ You still have to do the configuration per the book for GIT and Heroku (Chap. 1)
 
 My next part of this project is to create a fully complete bootable development environment that has all these steps already done, which can be run from a flash drive.  Just plug in the flash drive and boot.  None of the installation or configuration business required.  If that appeals to you, look for that in the future...
 
-If you have any issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing your issue, and hence, more likelihood that you'll get help.  
+If you have any comments or issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing this topic:  
+
+http://getsatisfaction.com/railstutorial/topics/set_up_rails_tutorial_programming_environment_instructions_linux_windows
 
 
 -Cosmo Lee
@@ -21,7 +23,7 @@ If you have any issues, please post to the GetSatisfaction thread, where there a
 
 *** Windows installation notes ***
 
-If you are a Windows user having problems setting up a satisfactory ROR environment, or are simply looking for an easy setup, you can load Ubuntu with the Ubuntu "Windows Installer". This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you probably have a solution with less friction than trying to load the environment natively and having to figure out all the dependencies on your own.  
+If you are a Windows user having problems setting up a satisfactory ROR environment, or are simply looking for an easy setup, you can load Ubuntu with the "Windows Ubuntu Installer" - WUBI. This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you probably have a solution with less friction than trying to load the environment natively and having to figure out all the dependencies on your own.  
 
 Note: The Windows Installer option has been known to have issues booting Linux if you have multiple operating systems installed on various partitions on your hard drive.  If you only have Windows installed on your drive, you'll probably be OK.  YMMV.  But it's pretty painless to give it a try and see if it will work for you.  If it doesn't work, you simply uninstall Ubuntu from your Windows application programs.  If you can't get the Ubuntu "inside" Windows option to work, you still have as a fall back the option of installing Ubuntu to a separate partition on your hard drive.  
 
@@ -49,7 +51,7 @@ You only actually type at the command line:
 http://linuxmint.com/
 Linux Mint 10 also has an "inside" Windows install option.  To access that, boot from the installation DVD.
 
-http://www.ubuntu.com/desktop/get-ubuntu/windows-installer  
+https://wiki.ubuntu.com/WubiGuide
 http://www.ubuntu.com/desktop
 
 
