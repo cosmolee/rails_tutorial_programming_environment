@@ -1,0 +1,19 @@
+#!/bin/ruby
+
+require 'autotest/timestamp'
+
+require 'autotest/growl'
+
+#This turns off screen clearing between tests.  Leave it "false" until you ensure that autotest is running properly, otherwise you may miss some errors written to the screen.  
+Autotest::Growl::clear_terminal = false
+
+#Turn on Growl notifications of test runs when files are changed.
+Autotest::Growl::show_modified_files = true
+
+#Make notifications sticky so you won't miss them: you must click notification to dismiss instead of it fading after time.
+#This doesn't currently work, but it will be nice if it ever does get fixed...
+Autotest::Growl::sticky_failure_notifications = true
+
+require 'autotest/inotify'
+
+
