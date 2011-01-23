@@ -1,17 +1,8 @@
 "Ruby on Rails 3 Tutorial" environment setup instructions. 
 
-Problem: 
-
-Getting a full working Ruby On Rails development environment for Linux and Windows, as described in the book [*Ruby on Rails Tutorial: Learn Rails by Example*](http://railstutorial.org/) by [Michael Hartl](http://michaelhartl.com/) can really suck.  Hard.  Various parts of the puzzle have dependencies that you have to hunt down, and they change rapidly, causing incompatibilities between versions, making it difficult to nail down a stable environment.  
-
-
-Solution:
-
-This project prescribes a solution to the problem for the Ubuntu Linux platform, and by extension, makes available an alternative path for Windows users.  By following these instructions you can have a functioning environment up in a short amount of time.  
-
 These instructions will produce the full development environment as described in the book with Ruby 1.9.2 and ROR 3.  It is complete with the optional RVM - Ruby Version Manager, Growl - pop-up notifications, Inotify - file system monitor (like FSevent for Mac OSX), and Autotest - automated continuous testing, running with Spork for fast test runs.  These instructions can also be used as a template to quickly get up and running with a useful development environment for your own projects.  
 
-I use version 10.04 of Ubuntu Linux as the base platform because it is an LTS (Long Term Support) release which will have maintenance support for an extended period.  Most significant problems that cause things to break (and much hair pulling) are in the Ruby Gems interactions.  This is taken care of by the supplied Gemfile, which specifies the particular set of gems required to create a functioning gemset for our purposes.  Since the gems interaction problem has been taken care of here, if you are using a different version (Ubuntu 10.10 & Linux Mint 10 also work) of Ubuntu (or Ubuntu-based distro), the instructions will most likely work for you as well, with, perhaps, minor modifications.  
+I use version 10.04 of Ubuntu Linux as the base platform because it is an LTS (Long Term Support) release which will have maintenance support for an extended period.  Most significant problems that cause things to break (and much hair pulling) are in the Ruby Gems interactions.  This is taken care of by the supplied Gemfile, which specifies the particular set of gems required to create a functioning gemset for our purposes.  Since the gems interaction problem has been taken care of here, if you are already using a different version (Ubuntu 10.10 & Linux Mint 10 also work) of Ubuntu (or Ubuntu-based distro), the instructions will most likely work for you as well, with, perhaps, minor modifications.  
 
 If you wish to use the Linux environment for more than the development purposes here, say, playing movies from DVD, browse sites with Flash content, or as a general desktop, see below for a link to Mint Linux 10, which is an Ubuntu-based distro.  It's a friendlier Linux experience than Ubuntu, and comes pre-installed with codecs for playing DVDs, MP3, Flash, etc. It generally makes it easier to access content that uses proprietary content.   
 
@@ -21,19 +12,18 @@ You still have to do the configuration per the book for GIT and Heroku (Chap. 1)
 
 My next part of this project is to create a fully complete bootable development environment that has all these steps already done, which can be run from a flash drive.  Just plug in the flash drive and boot.  None of the installation or configuration business required.  If that appeals to you, look for that in the future...
 
-If you have any issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing your issue, and hence, more likelyhood that you'll get help.  If you need to contact me personally, email: 
-  NOcosmolee@SPAMcosmolee.com  <-- (remove "NO" and "SPAM" for the real email address)
+If you have any issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing your issue, and hence, more likelyhood that you'll get help.  
 
 
-Cosmo Lee
+-Cosmo Lee
 
 
 
 *** Windows installation notes ***
 
-If you are a Windows user having problems setting up a satisfactory ROR environment or are simply looking for an easy setup, you can load Ubuntu with the Ubuntu "Windows Installer". This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you probably have a solution with less friction than trying to load the environment natively and having to figure out all the dependencies on your own.  
+If you are a Windows user having problems setting up a satisfactory ROR environment, or are simply looking for an easy setup, you can load Ubuntu with the Ubuntu "Windows Installer". This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you probably have a solution with less friction than trying to load the environment natively and having to figure out all the dependencies on your own.  
 
-Note: The Windows Installer option has been known to have issues booting Ubuntu if you have multiple operating systems installed on various partitions on your hard drive.  If you only have Windows installed, you'll probably be OK.  YMMV.  But it's pretty painless to give it a try and see if it will work for you.  If it doesn't work, you simply uninstall Ubuntu from your Windows application programs.  If you can't get the Ubuntu "inside" Windows option to work, you still have as a fallback the option of installing Ubuntu to a separate partition on your hard drive.  
+Note: The Windows Installer option has been known to have issues booting Linux if you have multiple operating systems installed on various partitions on your hard drive.  If you only have Windows installed on your drive, you'll probably be OK.  YMMV.  But it's pretty painless to give it a try and see if it will work for you.  If it doesn't work, you simply uninstall Ubuntu from your Windows application programs.  If you can't get the Ubuntu "inside" Windows option to work, you still have as a fallback the option of installing Ubuntu to a separate partition on your hard drive.  
 
 To install to a separate partition, install Ubuntu from a DVD and the install process will walk you through creating a new partition.  If you haven't already installed Windows, but are planning on running both Windows and Linux together on the same hard drive in separate respective partitions, you should install Windows first.  Windows has been known to not play nice with other operating systems and blow away the ability to boot the other operating system upon a new install.  
 
@@ -50,8 +40,8 @@ Note: the lines below that start with the "$" sign are commands that are to be e
 http://linuxmint.com/
 Linux Mint 10 also has an "inside" Windows install option.  To access that, boot from the installation DVD.
 
-See: http://www.ubuntu.com/desktop/get-ubuntu/windows-installer  
-See: http://www.ubuntu.com/desktop
+http://www.ubuntu.com/desktop/get-ubuntu/windows-installer  
+http://www.ubuntu.com/desktop
 
 
 
@@ -85,10 +75,10 @@ Get .bashrc file from GIT repository.  Make edits to .bashrc file.
 
 Edit the RVM config lines in .bashrc.  See README file in .rvm directory for more info.  I find the instructions there to be cumbersome.  I simply put the required line at the top of the .bashrc file to achieve the same thing, instead of changing the logic of the code as suggested by the RVM README file.  This worked fine for me with a stock .bashrc file.  If this doesn't work for you, you can follow those instructions instead.  If you haven't made any changes to your .bashrc file, you can just grab the entire file from the GIT repository and overwrite/create your .bashrc with it.  These are the .bashrc file edits I made.  Add your own .bashrc changes, if any.
 
-Note to Windows users: to edit files you can run the included text editor.  Click on the System menu icon, click Accessories -> Text Editor  Choose/create the file in your home directory named ".bashrc".  Or copy the downloaded file from the GIT repository to your home directory.
+Note to Windows users: to edit files you can run the included text editor.  Click on the System menu icon, click Accessories -> Text Editor  Choose/create the file in your home directory named ".bashrc".  Or downloaded the file from the GIT repository and copy to your home directory.
 
 
-This loads RVM into a shell sessions, added:
+This loads RVM into shell sessions, added:
 
 	# This loads RVM into shell sessions.
 	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  
@@ -101,7 +91,7 @@ When you start using multiple gemsets, it's easy to lose track of which gemset y
 
 
 
-QUIT terminal and open a new terminal, you should now be running the new environment.  Confirm RVM loaded correctly:
+*QUIT* terminal and open a new terminal, you should now be running the new environment.  Confirm RVM loaded correctly:
 
 	$ type rvm | head -1
 
@@ -110,7 +100,7 @@ Should result in this ouput:
 	rvm is a function
 
 
-Note any system dependencies that need to be loaded - unless anything changes w/ RVM, everything should already be installed:
+Note any system dependencies that need to be loaded - unless anything changes w/ RVM, everything you need should already be installed:
 
 	$ rvm notes
 
@@ -218,7 +208,7 @@ Edit sample_app/config/application.rb per listing 3.13.  Replace that with repos
 
 
 
-We're ready to see the improved runtime of our tests.  Change directory to your project root directory.  Get a baseline on test time (Ignore the "No DRb server" warning):
+We're ready to see the improved runtime of our tests.  Get a baseline on test time (Ignore the "No DRb server" warning):
 
 	$ cd ~/rails_projects/sample_app	#Change to project root directory before running rspec
 	$ time rspec spec/
@@ -259,14 +249,14 @@ SWEET! DONE!!
 
 *** BUG NOTICES ***
 
-#Autotest will not exit with <ctl-c> <ctl-c> (twice) as is normal.  This is a bug caused by autotest-inotify.  The fix is to cause some activity in the project file hierarchy (which autotest-inotify is watching).  Open or go to another terminal screen and do an `ls` on a directory in the same project file hierarchy, then autotest will exit.  If you don't like this, remove the "require autotest/inotify" line in the ".autotest" file to get rid of inotify functionality.  This shouldn't really have any impact on you as normally you wouldn't have a reason to manually exit autotest.  There seems to be some bugginess with inotify blocking autotest.
+#Autotest will not exit with <ctl-c> <ctl-c> (twice) as is normal.  This is a bug caused by autotest-inotify.  The fix is to cause some activity in the project file hierarchy (which autotest-inotify is watching).  Open or go to another terminal screen and do an `ls` on a directory in the same project file hierarchy, then autotest will exit.  If you don't like this, remove the "require autotest/inotify" line in the ".autotest" file to get rid of inotify functionality.  This issue shouldn't really have any impact on you as normally you wouldn't have a reason to manually exit autotest.  There seems to be some bugginess with inotify blocking autotest.
 
 #Be sure that when you run the autotest command that you are in the project root directory.  If you are somewhere else, it may just sit there telling you nothing useful.
 
 
 #Not actually a bug, but Spork pre-loads some files in order to run tests fast.  But if you make changes to these files, they won't be noticed.  If you find that you keep getting an error from the tests, but you are sure that your code was correct, you may be editing a pre-loaded file.  
 
-An example of this happens in an exercize in Chapter 3.18.  You are instructed to edit config/routes.rb and app/controller/pages_controller.rb.  However, when the tests get run, an error gets thrown that there isn't a route to controller: page, action:about.  This is because Spork did not register the change to routes.rb because it was preloaded.  In order to have this register you must kill and restart Spork.  This happens when the tests run after the 3.18 edits.  
+An example of this happens in exercize 3.18.  You are instructed to edit config/routes.rb and app/controller/pages_controller.rb.  However, when the tests run, an error gets thrown saying there isn't a route to controller: page, action:about.  This is because Spork did not register the change to routes.rb because it was preloaded.  In order to have this register you must kill and restart Spork.  
 
 To see which files Spork pre-loads, run `spork --diagnose`
 
