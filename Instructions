@@ -71,7 +71,7 @@ Update package list:
 
 Install various required Linux packages:
 
-	$ sudo apt-get install lib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs
+	$ sudo apt-get install zlib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs
 
 
 
@@ -81,7 +81,7 @@ Install various required Linux packages:
 
 
 
-Get .bashrc file from GIT repository.  Make edits to .bashrc file.  
+* Get .bashrc file from GIT repository.  Make edits to .bashrc file.  
 
 
 Edit the RVM config lines in .bashrc.  See README file in .rvm directory for more info.  I find the instructions there to be cumbersome.  I simply put the required line at the top of the .bashrc file to achieve the same thing, instead of changing the logic of the code as suggested by the RVM README file.  This worked fine for me with a stock .bashrc file.  If this doesn't work for you, you can follow those instructions instead.  If you haven't made any changes to your .bashrc file, you can just grab the entire file from the GIT repository and overwrite/create your .bashrc with it.  These are the .bashrc file edits I made.  Add your own .bashrc changes, if any.
@@ -110,16 +110,6 @@ Should result in this output:
 
 	rvm is a function
 
-
-Note any system dependencies that need to be loaded - unless anything changes w/ RVM, everything you need should already be installed:
-
-	$ rvm notes
-
-
-Update RVM:
-
-	$ rvm get head
-	$ rvm reload
 
 
 Install Ruby 1.9.2:
@@ -168,7 +158,7 @@ This is the first exercise in the book in Chapter 3.  Here we set up the environ
 
 *** SET UP PROJECT GEMS ***
 
-Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with file from GIT repository.
+* Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with file from GIT repository.
 
 
 
@@ -191,7 +181,7 @@ Ignore, since `type autotest` does show autotest in PATH.
 
 
 
-Edit sample_app/.rspec file in Rails project root directory.  Replace that with repository file.
+* Edit sample_app/.rspec file in Rails project root directory.  Replace that with repository file.
 
 
 
@@ -202,7 +192,8 @@ This is an exercise in the book, chap 3.  We'll run it to test that we've got fu
 
 You should be able to run rspec tests successfully:
 
-	$ rspec spec/
+	$ cd ~/rails_projects/sample_app	#Change to project root directory before running rspec
+	$ rspec spec/				#Ignore the "No DRb server" warning
 	
 	...
 
@@ -218,10 +209,10 @@ Set up Spork:
 	$ spork --bootstrap
 
 
-Edit sample_app/spec/spec_helper.rb file per listing 3.12.  Replace that with repository file.
+* Edit sample_app/spec/spec_helper.rb file per listing 3.12.  Replace that with repository file.
 
 
-Edit sample_app/config/application.rb per listing 3.13.  Replace that with repository file.  Note: if you are using this file for other then sample_app, you must change the module name in the file to reflect the project name.
+* Edit sample_app/config/application.rb per listing 3.13.  Replace that with repository file.  Note: if you are using this file for other then sample_app, you must change the module name in the file to reflect the project name.
 
 
 
@@ -252,12 +243,13 @@ After you see the "Spork is ready and listening" message, switch back to the pre
 
 *** SET UP AUTOTEST ***
 
-Create sample_app/.autotest file.  Replace that with repository file.
+* Create sample_app/.autotest file.  Replace that with repository file.
 
 
 
 You may now run autotest (Chap 3).  You will see some errors about variables (see notes below), but autotest runs fine.  Be sure that you are in the project root directory.
 
+	$ cd ~/rails_projects/sample_app	#Change to project root directory before running 
 	$ autotest
 
 	...

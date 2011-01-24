@@ -11,3 +11,5 @@ These instructions will produce the full development environment as described in
 
 To begin, read the "Instruction" file.
 
+Tip: Click the "Downloads" button to copy all the needed files to your computer in one shot.
+
