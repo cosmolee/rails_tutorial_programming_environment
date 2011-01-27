@@ -1,0 +1,80 @@
+
+*** GOING FORWARD FROM HERE ***
+
+You've installed the required software.  As you read through the book, you don't need to execute any commands that contain the following words (As of the date of this writing, this holds true through Chap 3.  Keep in mind that with the electronic editions, the author makes continual updates. Please let me know if you discover any exceptions.):
+
+	apt-get install
+	rvm install
+	gem install
+
+You do NOT need to make further changes to the Gemfile for the rest of the book.  
+
+
+GIT and Heroku have been installed, however:
+#The user needs to set up GIT and SSH keys per instructions in book @ section 1.3.1
+#The user needs to set up Heroku and add SSH keys to Heroku per book instructions @ section 1.4.1
+
+#For new projects you create, you can use this document as a template to quickly get a working development environment up and running.
+
+#If you want the autotest configuration to be available for all of your Rails projects, you can move the .autotest file to your home directory.
+
+#Alas, the same cannot be said of the .rspec file.  You must have it in the project root directory.  
+
+#Keep a mental note, as mentioned in Chap. 3, that as presently configured, Autotest doesn't run the tests when you modify views - it only notifies you of the file change.  Modify the view's corresponding controller file if you want the tests to be run.  You can also run `rspec spec/` manually from the command line, even if autotest is also running.  
+
+
+
+
+
+*** INITIAL NEW PROJECT SETUP  ***
+
+  All the commands should be run from the project root directory to avoid "surprises".
+
+  Initial project Git set up (Chap 1.3.4):
+
+	$ git init
+	$ git add .
+	$ git commit -m "Initial commit"
+	#Create your app repository at www.github.com, then:
+	$ git remote add origin git@github.com:<username>/<app_name>.git
+	$ git push origin master
+
+
+  Initial project Heroku set up (Chap 1.4.2, 2.3.5):
+
+	$ heroku create
+	$ git push heroku master
+	$ heroku rake db:migrate
+
+
+
+
+*** DAILY WORK FLOW  ***
+
+  All the commands should be run from the project root directory to avoid "surprises".
+
+  To use the environment on a daily basis:
+
+	-Open Terminal, change to your project root directory
+	-run `spork`, wait for the "Spork is ready" message
+	-Open a new TAB <shift+ctrl+T>, run `autotest`
+	-Open a new TAB <shift+ctrl+T>, run `rails server`
+	-Open a new TAB <shift+ctrl+T>, 
+		$ git checkout -b <name-of-branch-here>		#Don't use spaces in name.
+	-Do your coding
+
+
+	-If using GIT and/or Heroku, daily push and deploy - see 3.4 to review:
+
+		$ git add .		
+		$ git commit -am "<enter-a-description-here>"
+		$ git checkout master
+		$ git merge <name-of-branch-here>   # Same name you used in `git checkout -b` above
+		$ git push		#Push to GIT
+
+		$ git push heroku	#Push to Heroku
+		$ heroku db:push	#Do this to optionally push your local DB data to Heroku
+
+
+HAPPY CODING!
+
