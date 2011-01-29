@@ -67,7 +67,7 @@ GIT and Heroku have been installed, however:
 	-If using GIT and/or Heroku, daily push and deploy - see 3.4 to review:
 
 		$ git add .		
-		$ git commit -am "<enter-a-description-here>"
+		$ git commit -am "<enter a description here>"	#Spaces OK in description.
 		$ git checkout master
 		$ git merge <name-of-branch-here>   # Same name you used in `git checkout -b` above
 		$ git push		#Push to GIT

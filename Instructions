@@ -10,12 +10,14 @@ I've tested the instructions extensively by starting from scratch Ubuntu install
 
 You still have to do the configuration per the book for GIT and Heroku (Chap. 1), but the required software to do the exercises will already be installed, and the resulting programming environment is very nice to work with.  I tried to install all the software required for the exercises, but as of this writing, I still have not yet gotten past Chapter 3, since all the problems that I encountered side-tracked me into this project.  Please let me know if I've left anything out or if you have any problems I should know about...
 
-My next part of this project is to create a fully complete bootable development environment that has all these steps already done, which can be run from a flash drive.  Just plug in the flash drive and boot.  None of the installation or configuration business required.  If that appeals to you, look for that in the future...
-
 If you have any comments or issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing this topic:  
 
 http://getsatisfaction.com/railstutorial/topics/set_up_rails_tutorial_programming_environment_instructions_linux_windows
 
+
+There is a sister project which provides a fully complete bootable development environment that has all these steps already done, which can be run from a flash drive, CD, or virtual machine.  Just plug in a flash drive and boot.  None of the installation or configuration business required.  If that appeals to you, you can find it here:
+
+http://getsatisfaction.com/railstutorial/topics/rails_tutorial_programming_environment_ready_bake_version_linux_win_or_mac
 
 -Cosmo Lee
 
@@ -312,5 +314,5 @@ bundle exec /home/tutorial/.rvm/rubies/ruby-1.9.2-p0/bin/ruby -S /home/tutorial/
 
 
 
-See "Usage-Notes.txt" file for further info on using the environment.
+*** See "Usage-Notes.txt" file for further info on using the environment. ***
 
