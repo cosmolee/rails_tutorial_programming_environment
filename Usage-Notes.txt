@@ -60,6 +60,7 @@ GIT and Heroku have been installed, however:
 	-Open a new TAB <shift+ctrl+T>, run `autotest`
 	-Open a new TAB <shift+ctrl+T>, run `rails server`
 	-Open a new TAB <shift+ctrl+T>, 
+		$ git checkout master
 		$ git checkout -b <name-of-branch-here>		#Don't use spaces in name.
 	-Do your coding
 
