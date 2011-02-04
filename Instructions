@@ -1,6 +1,6 @@
 "Ruby on Rails 3 Tutorial" environment setup instructions. 
 
-These instructions will produce the full development environment as described in the book with Ruby 1.9.2 and ROR 3.  It is complete with the optional RVM - Ruby Version Manager, Growl - pop-up notifications, Inotify - file system monitor (like FSevent for Mac OSX), and Autotest - automated continuous testing, running with Spork for fast test runs.  These instructions can also be used as a template to quickly get up and running with a useful development environment for your own projects.  
+These instructions will produce the full development environment as described in the book with Ruby 1.9.2 and ROR 3.  It is complete with the optional RVM - Ruby Version Manager, Growl - pop-up notifications, Inotify - file system monitor (like FSevent for Mac OSX), SQLite Database Browser, and Autotest - automated continuous testing, running with Spork for fast test runs.  These instructions can also be used as a template to quickly get up and running with a useful development environment for your own projects.  
 
 I use version 10.04 of Ubuntu Linux as the base platform because it is an LTS (Long Term Support) release which will have maintenance support for an extended period.  Most significant problems that cause things to break (and much hair pulling) are in the Ruby Gems interactions.  This is taken care of by the supplied Gemfile, which specifies the particular set of gems required to create a functioning gemset for our purposes.  Since the gems interaction problem has been taken care of here, if you are already using a different version (Ubuntu 10.10 & Linux Mint 10 also work) of Ubuntu (or Ubuntu-based distro), the instructions will most likely work for you as well, with, perhaps, minor modifications.  
 
@@ -73,7 +73,7 @@ Update package list:
 
 Install various required Linux packages:
 
-	$ sudo apt-get install zlib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs
+	$ sudo apt-get install zlib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs sqlitebrowser
 
 
 
