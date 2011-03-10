@@ -298,7 +298,7 @@ You may see various warnings when running autotest with autotest-inotify, howeve
     --------------------------------------------------------------------------------
 
       /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/autotest-inotify-0.0.4/lib/autotest/inotify.rb:64: 
-  warning: instance variable @notifier not initialized
+    warning: instance variable @notifier not initialized
     bundle exec /home/tutorial/.rvm/rubies/ruby-1.9.2-p0/bin/ruby -S     /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rspec-core-2.3.1/bin/rspec --tty
     '/home/tutorial/Desktop/rails/test-12-30-001/spec/controllers/pages_controller_spec.rb'
     '/home/tutorial/Desktop/rails/test-12-30-001/spec/helpers/pages_helper_spec.rb'
