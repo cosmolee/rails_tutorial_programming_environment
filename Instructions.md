@@ -37,11 +37,11 @@ Note: the lines below that start with the "$" sign are commands that are to be e
 
 So if you see:
 
-	$ echo howdy	#Echo the word howdy
+    $ echo howdy    #Echo the word howdy
 
 You only actually type at the command line:
 
-	echo howdy
+    echo howdy
 
 
 ## Linux Download Links
@@ -64,18 +64,18 @@ Open a terminal.  From the system menu, click Applications -> Accessories -> Ter
 
 Update package list:
 
-	$ sudo apt-get update
+    $ sudo apt-get update
 
 
 Install various required Linux packages:
 
-	$ sudo apt-get install zlib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs sqlitebrowser
+    $ sudo apt-get install zlib1g zlib1g-dev libssl-dev build-essential sqlite3 libsqlite3-dev sqlite3-doc git-core curl libxslt1-dev libxml2-dev  git-core libreadline6 libreadline6-dev libyaml-dev libsqlite3-0 autoconf libc6-dev bison openssl libnotify-bin vim emacs sqlitebrowser
 
 
 
 ## INSTALL RVM & RUBY
 
-	$ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+    $ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 
 
 
@@ -89,59 +89,59 @@ Note to Windows users: to edit files you can run the included text editor.  Clic
 
 This loads RVM into shell sessions, added:
 
-	# This loads RVM into shell sessions.
-	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  
+    # This loads RVM into shell sessions.
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  
 
 
 When you start using multiple gemsets, it's easy to lose track of which gemset you're currently using and make mistakes, thinking you're using a different gemset, resulting in unexpected and confusing behavior.  So I've made a change to the shell prompt to always show the current RVM gemset, added:
 
-	#Add RVM gemset name
-	PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+    #Add RVM gemset name
+    PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
 
 
 
 *QUIT* terminal and open a new terminal, you should now be running the new environment.  Confirm RVM loaded correctly:
 
-	$ type rvm | head -1
+    $ type rvm | head -1
 
 Should result in this output: 
 
-	rvm is a function
+    rvm is a function
 
 
 
 Install Ruby 1.9.2:
 
-	$ rvm package install zlib
-	$ rvm install 1.9.2 
+    $ rvm package install zlib
+    $ rvm install 1.9.2 
 
 
 Create gemset for tutorial use:
 
-	$ rvm --create use 1.9.2@rails3tutorial
+    $ rvm --create use 1.9.2@rails3tutorial
 
 
 Make that gemset the default
 
-	$ rvm --default use 1.9.2@rails3tutorial
+    $ rvm --default use 1.9.2@rails3tutorial
 
 
 Your command prompt should now be showing the current gemset.  Something like:
 
-	ruby-1.9.2-p136@rails3tutorial login-name@computer-name:~$
+    ruby-1.9.2-p136@rails3tutorial login-name@computer-name:~$
 
 
 
 ## INSTALL RAILS 3
 
 
-	$ gem install rails --version 3.0.3 
+    $ gem install rails --version 3.0.3 
 
 
 Make a directory for your Rails projects:
 
-	$ mkdir rails_projects  
-	$ cd rails_projects
+    $ mkdir rails_projects  
+    $ cd rails_projects
 
 
 
@@ -149,8 +149,8 @@ Make a directory for your Rails projects:
 
 This is the first exercise in the book in Chapter 3.  Here we set up the environment that you'll be using for the main book project.  When you later follow along in the book and come to this chapter, *remember that you've already done this*.  Otherwise, you'll blow away the work you're about to do and will have to re-do these steps.  So DON'T repeat the following commands.  You might want to write a sticky note and place it in the book or on your screen so you won't forget.  If you do forget and try to re-create the project, Rails will give you an Overwrite warning that you are about to do so.  If so, type "q" at the prompt to exit the process.
 
-	$ rails new sample_app -T
-	$ cd sample_app
+    $ rails new sample_app -T
+    $ cd sample_app
 
 
 
@@ -162,11 +162,11 @@ This is the first exercise in the book in Chapter 3.  Here we set up the environ
 
 Create bundle for project:
 
-	$ bundle install
+    $ bundle install
 
-	...
+    ...
 
-	Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+    Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
 
 
 
@@ -175,7 +175,7 @@ Create bundle for project:
 You might see an error message generated: "Could not find "autotest" in any of your source paths."
 Ignore, since `type autotest` does show autotest in PATH.
 
-	$ rails generate rspec:install
+    $ rails generate rspec:install
 
 
 * Edit sample_app/.rspec file in Rails project root directory.  Replace that with repository file.
@@ -183,19 +183,19 @@ Ignore, since `type autotest` does show autotest in PATH.
 
 
 This is an exercise in the book, chap 3.  We'll run it to test that we've got functionality:
-	
-	$ rails generate controller Pages home contact
+    
+    $ rails generate controller Pages home contact
 
 
 You should be able to run rspec tests successfully:
 
-	$ cd ~/rails_projects/sample_app	#Change to project root directory before running rspec
-	$ rspec spec/				#Ignore the "No DRb server" warning
-	
-	...
+    $ cd ~/rails_projects/sample_app    #Change to project root directory before running rspec
+    $ rspec spec/                #Ignore the "No DRb server" warning
+    
+    ...
 
-	Finished in 0.28896 seconds
-	5 examples, 0 failures, 3 pending
+    Finished in 0.28896 seconds
+    5 examples, 0 failures, 3 pending
 
 
 
@@ -203,7 +203,7 @@ You should be able to run rspec tests successfully:
 
 Set up Spork:
 
-	$ spork --bootstrap
+    $ spork --bootstrap
 
 
 * Edit sample_app/spec/spec_helper.rb file per listing 3.12.  Replace that with repository file.
@@ -216,23 +216,23 @@ Set up Spork:
 
 We're ready to see the improved runtime of our tests.  Get a baseline on test time:
 
-	$ cd ~/rails_projects/sample_app	#Change to project root directory before running rspec
-	$ time rspec spec/			#Ignore the "No DRb server" warning
+    $ cd ~/rails_projects/sample_app    #Change to project root directory before running rspec
+    $ time rspec spec/            #Ignore the "No DRb server" warning
 
 Open up *another* terminal tab <shift+ctrl+T> and run Spork.  
 
-	$ spork
+    $ spork
 
-	...
+    ...
 
-	Loading Spork.prefork block...
-	Spork is ready and listening on 8989!
+    Loading Spork.prefork block...
+    Spork is ready and listening on 8989!
        
 
 
 After you see the "Spork is ready and listening" message, switch back to the previous terminal tab to run fast tests. Note difference in test times.  Much faster!  
 
-	$ time rspec spec/
+    $ time rspec spec/
 
 
 
@@ -244,15 +244,15 @@ Create sample_app/.autotest file.  Replace that with repository file.
 
 You may now run autotest (Chap 3).  You will see some errors about variables (see notes below), but autotest runs fine.  Be sure that you are in the project root directory.
 
-	$ cd ~/rails_projects/sample_app	#Change to project root directory before running 
-	$ autotest
+    $ cd ~/rails_projects/sample_app    #Change to project root directory before running 
+    $ autotest
 
-	...
+    ...
 
-	Finished in 0.26421 seconds
-	5 examples, 0 failures, 3 pending
+    Finished in 0.26421 seconds
+    5 examples, 0 failures, 3 pending
 
-	# Waiting since 2011-01-22 21:34:59
+    # Waiting since 2011-01-22 21:34:59
 
 
 
@@ -301,7 +301,7 @@ You may see various warnings when running autotest with autotest-inotify, howeve
 
 If there is a warning about no DRB server running, then you are not already running `spork` prior to running the tests.  In such a case, your tests will still run, but without the speed benefits of Spork:
 
-	No DRb server is running. Running in local process instead ...
+    No DRb server is running. Running in local process instead ...
 
 *See "Usage-Notes.txt" file for further info on using the environment.*
 
