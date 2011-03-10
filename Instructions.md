@@ -1,4 +1,4 @@
-# "Ruby on Rails 3 Tutorial" environment setup instructions
+# *Ruby on Rails 3 Tutorial* environment setup instructions
 
 These instructions will produce the full development environment as described in the book with Ruby 1.9.2 and ROR 3.  It is complete with the optional RVM - Ruby Version Manager, Growl - pop-up notifications, Inotify - file system monitor (like FSevent for Mac OSX), SQLite Database Browser, and Autotest - automated continuous testing, running with Spork for fast test runs.  These instructions can also be used as a template to quickly get up and running with a useful development environment for your own projects.  
 
@@ -23,7 +23,7 @@ http://getsatisfaction.com/railstutorial/topics/rails_tutorial_programming_envir
 
 
 
-*** Windows installation notes ***
+## Windows installation notes
 
 If you are a Windows user having problems setting up a satisfactory ROR environment, or are simply looking for an easy setup, you can load Ubuntu with the "Windows Ubuntu Installer" - WUBI. This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you probably have a solution with less friction than trying to load the environment natively and having to figure out all the dependencies on your own.  
 
@@ -44,11 +44,7 @@ You only actually type at the command line:
 	echo howdy
 
 
-*** End of Windows notes ***
-
-
-
-*** Linux Download Links ***
+## Linux Download Links
 
 http://linuxmint.com/
 Linux Mint 10 also has an "inside" Windows install option.  To access that, boot from the installation DVD.
@@ -59,10 +55,10 @@ http://www.ubuntu.com/desktop
 
 
 
-LET'S BEGIN...
+# LET'S BEGIN...
 
 
-*** INSTALL REQUIRED LINUX SOFTWARE ***
+# INSTALL REQUIRED LINUX SOFTWARE
 
 Open a terminal.  From the system menu, click Applications -> Accessories -> Terminal
 
@@ -77,7 +73,7 @@ Install various required Linux packages:
 
 
 
-*** INSTALL RVM & RUBY ***
+## INSTALL RVM & RUBY
 
 	$ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 
@@ -136,7 +132,7 @@ Your command prompt should now be showing the current gemset.  Something like:
 
 
 
-*** INSTALL RAILS 3 ***
+## INSTALL RAILS 3
 
 
 	$ gem install rails --version 3.0.3 
@@ -149,7 +145,7 @@ Make a directory for your Rails projects:
 
 
 
-Create Rails app (Chap 3):
+## Create Rails app (Chap 3)
 
 This is the first exercise in the book in Chapter 3.  Here we set up the environment that you'll be using for the main book project.  When you later follow along in the book and come to this chapter, *remember that you've already done this*.  Otherwise, you'll blow away the work you're about to do and will have to re-do these steps.  So DON'T repeat the following commands.  You might want to write a sticky note and place it in the book or on your screen so you won't forget.  If you do forget and try to re-create the project, Rails will give you an Overwrite warning that you are about to do so.  If so, type "q" at the prompt to exit the process.
 
@@ -158,7 +154,7 @@ This is the first exercise in the book in Chapter 3.  Here we set up the environ
 
 
 
-*** SET UP PROJECT GEMS ***
+## SET UP PROJECT GEMS
 
 * Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with file from GIT repository.
 
@@ -174,13 +170,12 @@ Create bundle for project:
 
 
 
-*** SET UP RSPEC ***
+## SET UP RSPEC
 
 You might see an error message generated: "Could not find "autotest" in any of your source paths."
 Ignore, since `type autotest` does show autotest in PATH.
 
 	$ rails generate rspec:install
-
 
 
 * Edit sample_app/.rspec file in Rails project root directory.  Replace that with repository file.
@@ -272,47 +267,42 @@ SWEET! DONE!!
 
 
 
-*** BUG NOTICES ***
+## BUG NOTICES
 
-#Autotest will not exit with <ctl-c> <ctl-c> (twice) as is normal.  This is a bug caused by autotest-inotify.  The fix is to cause some activity in the project file hierarchy (which autotest-inotify is watching).  Open or go to another terminal screen and do an `ls` on a directory in the same project file hierarchy, then autotest will exit.  If you don't like this, remove the "require autotest/inotify" line in the ".autotest" file to get rid of inotify functionality.  This issue shouldn't really have any impact on you as normally you wouldn't have a reason to manually exit autotest.  There seems to be some bugginess with inotify blocking autotest.
+* Autotest will not exit with <ctl-c> <ctl-c> (twice) as is normal.  This is a bug caused by autotest-inotify.  The fix is to cause some activity in the project file hierarchy (which autotest-inotify is watching).  Open or go to another terminal screen and do an `ls` on a directory in the same project file hierarchy, then autotest will exit.  If you don't like this, remove the "require autotest/inotify" line in the ".autotest" file to get rid of inotify functionality.  This issue shouldn't really have any impact on you as normally you wouldn't have a reason to manually exit autotest.  There seems to be some bugginess with inotify blocking autotest.
 
-#Be sure that when you run the autotest command that you are in the project root directory.  If you are somewhere else, it may just sit there telling you nothing useful.
+* Be sure that when you run the autotest command that you are in the project root directory.  If you are somewhere else, it may just sit there telling you nothing useful.
 
 
-#Not actually a bug, but Spork pre-loads some files in order to run tests fast.  But if you make changes to these files, they won't be noticed.  If you find that you keep getting an error from the tests, but you are sure that your code was correct, you may be editing a pre-loaded file.  
+* Not actually a bug, but Spork pre-loads some files in order to run tests fast.  But if you make changes to these files, they won't be noticed.  If you find that you keep getting an error from the tests, but you are sure that your code was correct, you may be editing a pre-loaded file.  
 
 An example of this happens in exercise 3.18.  You are instructed to edit config/routes.rb and app/controller/pages_controller.rb.  However, when the tests run, an error gets thrown saying there isn't a route to controller: page, action:about.  This is because Spork did not register the change to routes.rb because it was preloaded.  In order to have this register you must kill and restart Spork.  
 
 To see which files Spork pre-loads, run `spork --diagnose`
 
 
+## INSTALLATION NOTES
+
+* You may see various warnings when running autotest with autotest-inotify, however, it appears to run fine despite them.  If you don't like this, remove the "require autotest/inotify" line in the .autotest file to get rid of inotify functionality.  However, without inotify your drive will have to continually manually check for changed files, instead of being automatically notified by the file system monitor.  
 
 
-*** INSTALLATION NOTES ***
-
-#You may see various warnings when running autotest with autotest-inotify, however, it appears to run fine despite them.  If you don't like this, remove the "require autotest/inotify" line in the .autotest file to get rid of inotify functionality.  However, without inotify your drive will have to continually manually check for changed files, instead of being automatically notified by the file system monitor.  
-
-
-$ autotest
-loading autotest/rails_rspec2
-/home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:225: warning: method redefined; discarding old align
-/home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:126: warning: previous definition of align was here
-/home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rb-inotify-0.8.4/lib/rb-inotify/notifier.rb:251: warning: shadowing outer local variable - ev
+  $ autotest
+  loading autotest/rails_rspec2
+  /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:225: warning: method redefined; discarding old align
+  /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:126: warning: previous definition of align was here
+  /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rb-inotify-0.8.4/lib/rb-inotify/notifier.rb:251: warning: shadowing outer local variable - ev
 
 
---------------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
 
-/home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/autotest-inotify-0.0.4/lib/autotest/inotify.rb:64: warning: instance variable @notifier not initialized
-bundle exec /home/tutorial/.rvm/rubies/ruby-1.9.2-p0/bin/ruby -S /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rspec-core-2.3.1/bin/rspec --tty '/home/tutorial/Desktop/rails/test-12-30-001/spec/controllers/pages_controller_spec.rb' '/home/tutorial/Desktop/rails/test-12-30-001/spec/helpers/pages_helper_spec.rb' '/home/tutorial/Desktop/rails/test-12-30-001/spec/views/pages/contact.html.erb_spec.rb' '/home/tutorial/Desktop/rails/test-12-30-001/spec/views/pages/home.html.erb_spec.rb'
-
+  /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/autotest-inotify-0.0.4/lib/autotest/inotify.rb:64: warning: instance variable @notifier not initialized
+  bundle exec /home/tutorial/.rvm/rubies/ruby-1.9.2-p0/bin/ruby -S /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rspec-core-2.3.1/bin/rspec --tty '/home/tutorial/Desktop/rails/test-12-30-001/spec/controllers/pages_controller_spec.rb' '/home/tutorial/Desktop/rails/test-12-30-001/spec/helpers/pages_helper_spec.rb' '/home/tutorial/Desktop/rails/test-12-30-001/spec/views/pages/contact.html.erb_spec.rb' '/home/tutorial/Desktop/rails/test-12-30-001/spec/views/pages/home.html.erb_spec.rb'
 
 
 
-#If there is a warning about no DRB server running, then you are not already running `spork` prior to running the tests.  In such a case, your tests will still run, but without the speed benefits of Spork:
+If there is a warning about no DRB server running, then you are not already running `spork` prior to running the tests.  In such a case, your tests will still run, but without the speed benefits of Spork:
 
 	No DRb server is running. Running in local process instead ...
 
-
-
-*** See "Usage-Notes.txt" file for further info on using the environment. ***
+*See "Usage-Notes.txt" file for further info on using the environment.*
 
