@@ -199,7 +199,7 @@ You should be able to run rspec tests successfully:
 
 
 
-*** SET UP SPORK ***
+# SET UP SPORK
 
 Set up Spork:
 
@@ -238,7 +238,7 @@ After you see the "Spork is ready and listening" message, switch back to the pre
 
 
 
-*** SET UP AUTOTEST ***
+# SET UP AUTOTEST
 
 * Create sample_app/.autotest file.  Replace that with repository file.
 
