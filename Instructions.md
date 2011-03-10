@@ -286,6 +286,7 @@ You may see various warnings when running autotest with autotest-inotify, howeve
 
   $ autotest
   loading autotest/rails_rspec2
+
   /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:225: warning: method redefined; discarding old align
   /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:126: warning: previous definition of align was here
   /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rb-inotify-0.8.4/lib/rb-inotify/notifier.rb:251: warning: shadowing outer local variable - ev
