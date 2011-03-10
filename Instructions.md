@@ -281,7 +281,7 @@ To see which files Spork pre-loads, run `spork --diagnose`
 
 ## INSTALLATION NOTES
 
-* You may see various warnings when running autotest with autotest-inotify, however, it appears to run fine despite them.  If you don't like this, remove the "require autotest/inotify" line in the .autotest file to get rid of inotify functionality.  However, without inotify your drive will have to continually manually check for changed files, instead of being automatically notified by the file system monitor.  
+You may see various warnings when running autotest with autotest-inotify, however, it appears to run fine despite them.  If you don't like this, remove the "require autotest/inotify" line in the .autotest file to get rid of inotify functionality.  However, without inotify your drive will have to continually manually check for changed files, instead of being automatically notified by the file system monitor.  
 
 
   $ autotest
