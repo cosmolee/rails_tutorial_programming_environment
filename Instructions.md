@@ -286,6 +286,8 @@ You may see various warnings when running autotest with autotest-inotify, howeve
 
     $ autotest
     loading autotest/rails_rspec2
+        /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:225: warning: method redefined; discarding old align
+  
 
 
 
