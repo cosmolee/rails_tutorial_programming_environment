@@ -240,9 +240,7 @@ After you see the "Spork is ready and listening" message, switch back to the pre
 
 # SET UP AUTOTEST
 
-* Create sample_app/.autotest file.  Replace that with repository file.
-
-
+Create sample_app/.autotest file.  Replace that with repository file.
 
 You may now run autotest (Chap 3).  You will see some errors about variables (see notes below), but autotest runs fine.  Be sure that you are in the project root directory.
 
