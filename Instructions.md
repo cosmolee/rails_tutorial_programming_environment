@@ -295,8 +295,7 @@ You may see various warnings when running autotest with autotest-inotify, howeve
     warning: shadowing outer local variable - ev
 
 
-    -------------------------------------------------
-    -------------------------------
+    --------------------------------------------------------------------------------
 
       /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/autotest-inotify-0.0.4/lib/autotest/inotify.rb:64: 
   warning: instance variable @notifier not initialized
