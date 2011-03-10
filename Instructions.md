@@ -286,7 +286,26 @@ You may see various warnings when running autotest with autotest-inotify, howeve
 
     $ autotest
     loading autotest/rails_rspec2
-        /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:225: warning: method redefined; discarding old align
+        /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:225:
+    warning: method redefined; discarding old align
+
+    /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/ffi-1.0.4/lib/ffi/struct.rb:126:
+    warning: previous definition of align was here
+      /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rb-inotify-0.8.4/lib/rb-inotify/notifier.rb:251:
+    warning: shadowing outer local variable - ev
+
+
+    -------------------------------------------------
+    -------------------------------
+
+  /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/autotest-inotify-0.0.4/lib/autotest/inotify.rb:64: 
+  warning: instance variable @notifier not initialized
+  bundle exec /home/tutorial/.rvm/rubies/ruby-1.9.2-p0/bin/ruby -S     /home/tutorial/.rvm/gems/ruby-1.9.2-p0@test-12-30-001/gems/rspec-core-2.3.1/bin/rspec --tty
+    '/home/tutorial/Desktop/rails/test-12-30-001/spec/controllers/pages_controller_spec.rb'
+    '/home/tutorial/Desktop/rails/test-12-30-001/spec/helpers/pages_helper_spec.rb'
+    '/home/tutorial/Desktop/rails/test-12-30-001/spec/views/pages/contact.html.erb_spec.rb'
+    '/home/tutorial/Desktop/rails/test-12-30-001/spec/views/pages/home.html.erb_spec.rb'
+
   
 
 
