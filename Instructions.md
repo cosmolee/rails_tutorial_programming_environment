@@ -75,7 +75,7 @@ Install various required Linux packages:
 
 ## INSTALL RVM & RUBY
 
-    $ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+    $ bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
 
 
 
