@@ -2,23 +2,23 @@
 
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'gravatar_image_tag'
+gem 'rails', '3.0.11'
+gem 'sqlite3', '1.3.3'
+gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
 gem 'heroku'
 gem 'taps'
 
 group :development do
-  gem 'rspec-rails', '2.3.0'
-  gem 'annotate-models', '1.0.4'
-  gem 'faker'
+  gem 'rspec-rails', '2.6.1'
+  gem 'annotate', '2.4.0'
+  gem 'faker', '0.3.1'
 end
 
 group :test do
-  gem 'rspec', '2.3.0'
+  gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
-  gem 'spork', '0.8.4'
+  gem 'spork', '0.9.0.rc8'
   gem 'factory_girl_rails', '1.0.1'
   gem 'ffi', '1.0.4'
   gem 'rb-inotify', '0.8.4'
