@@ -6,9 +6,9 @@ I use version 10.04 of Ubuntu Linux as the base platform because it is an LTS (L
 
 If you wish to use the Linux environment for more than the development purposes here, say, playing movies from DVD, browse sites with Flash content, or as a general desktop, see below for a link to Mint Linux 10, which is an Ubuntu-based distro.  It's a friendlier Linux experience than Ubuntu, and comes pre-installed with codecs for playing DVDs, MP3, Flash, etc. It generally makes it easier to access content that uses proprietary content.   
 
-I've tested the instructions extensively by starting from scratch Ubuntu installs and executing the instructions line by line.  You may be able to get the environment set up on an existing Ubuntu installation.  Worst-case, if you start with a clean install of Ubuntu 10.04, perhaps on a separate drive partition or a virtual machine, and follow these instructions exactly, you will have a functional "ROR 3 Tutorial" environment.  This just works.
+I've tested the instructions extensively by starting from scratch Ubuntu installs and executing the instructions line by line.  You may be able to get the environment set up on an existing Ubuntu installation.  Worst-case, if you start with a clean install of Ubuntu 10.04, perhaps on a separate drive partition or a virtual machine, you will have the feature-complete "ROR 3 Tutorial" environment.  If you follow the instructions exactly, keeping the same versions of each package, "this just works".
 
-You still have to do the configuration per the book for GIT and Heroku (Chap. 1), but the required software to do the exercises will already be installed, and the resulting programming environment is very nice to work with.  I tried to install all the software required for the exercises, but as of this writing, I still have not yet gotten past Chapter 3, since all the problems that I encountered side-tracked me into this project.  Please let me know if I've left anything out or if you have any problems I should know about...
+You still have to do the configuration per the book for GIT and Heroku (Chap. 1), but the required software to do the exercises will already be installed, and the resulting programming environment is very nice to work with.  
 
 If you have any comments or issues, please post to the GetSatisfaction thread, where there are likely to be more eyes viewing this topic:  
 
@@ -135,7 +135,7 @@ Your command prompt should now be showing the current gemset.  Something like:
 ## INSTALL RAILS 3
 
 
-    $ gem install rails --version 3.0.3 
+    $ gem install rails --version 3.0.11 
 
 
 Make a directory for your Rails projects:
@@ -156,7 +156,7 @@ This is the first exercise in the book in Chapter 3.  Here we set up the environ
 
 ## SET UP PROJECT GEMS
 
-* Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with file from GIT repository.
+* Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with the Gemfile file from this GIT repository.
 
 
 
