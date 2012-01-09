@@ -55,7 +55,7 @@ http://www.ubuntu.com/desktop
 
 
 
-# TO INSTALL TO UBUNTU OR UBUNTU-BASED LINUX...
+# TO INSTALL TO UBUNTU-BASED LINUX...
 
 
 # INSTALL REQUIRED LINUX SOFTWARE
@@ -158,9 +158,9 @@ This is the first exercise in the book in Chapter 3.  Here we set up the environ
 
 * Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with the Gemfile file from this GIT repository.
 
-    Eg: 
+Eg: 
     
-    $ cp path_to_directory/Gemfile  path_to_directory/sample_app/Gemfile
+    $ cp path_to_directory/Gemfile  Gemfile
 
 Create bundle for project:
 
