@@ -1,6 +1,6 @@
 Problem: 
 
-Getting a full working Ruby On Rails development environment for Linux and Windows, as described in the book [*Ruby on Rails Tutorial: Learn Rails by Example*](http://railstutorial.org/) by [Michael Hartl](http://michaelhartl.com/) can really suck.  Hard.  Various parts of the puzzle have dependencies that you have to hunt down, and they change rapidly, causing incompatibilities between versions, making it difficult to nail down a stable environment.  
+Getting the feature-complete Ruby On Rails development environment for Linux and Windows, as described in the book [*Ruby on Rails Tutorial: Learn Rails by Example*](http://railstutorial.org/) (first edition, 2011) by [Michael Hartl](http://michaelhartl.com/) can be time-consuming and difficult.  Various parts of the puzzle have dependencies that you have to hunt down, and they change rapidly, causing incompatibilities between versions, making it difficult to nail down a stable environment.  
 
 
 Solution:
