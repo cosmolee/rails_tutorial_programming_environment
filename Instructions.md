@@ -1,4 +1,4 @@
-# *Ruby on Rails 3 Tutorial* environment setup instructions
+# *Ruby on Rails 3 Tutorial* (first edition, 2011) environment setup instructions
 
 These instructions will produce the full development environment as described in the book with Ruby 1.9.2 and ROR 3.  It is complete with the optional RVM - Ruby Version Manager, Growl - pop-up notifications, Inotify - file system monitor (like FSevent for Mac OSX), SQLite Database Browser, and Autotest - automated continuous testing, running with Spork for fast test runs.  These instructions can also be used as a template to quickly get up and running with a useful development environment for your own projects.  
 
@@ -15,7 +15,7 @@ If you have any comments or issues, please post to the GetSatisfaction thread, w
 http://getsatisfaction.com/railstutorial/topics/set_up_rails_tutorial_programming_environment_instructions_linux_windows
 
 
-There is a sister project which provides a fully complete bootable development environment that has all these steps already done, which can be run from a flash drive, CD, or virtual machine.  Just plug in a flash drive and boot.  None of the installation or configuration business required.  If that appeals to you, you can find it here:
+There is a sister project which provides a fully complete bootable development environment that has all these steps already done, which can be run from a flash drive, CD, or virtual machine.  Just plug in a flash drive and boot.  No installation or configuration required.  If that appeals to you, you can find it here:
 
 http://getsatisfaction.com/railstutorial/topics/rails_tutorial_programming_environment_ready_bake_version_linux_win_or_mac
 
@@ -25,7 +25,7 @@ http://getsatisfaction.com/railstutorial/topics/rails_tutorial_programming_envir
 
 ## Windows installation notes
 
-If you are a Windows user having problems setting up a satisfactory ROR environment, or are simply looking for an easy setup, you can load Ubuntu with the "Windows Ubuntu Installer" - WUBI. This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you probably have a solution with less friction than trying to load the environment natively and having to figure out all the dependencies on your own.  
+If you are a Windows user having problems setting up a satisfactory ROR environment, or are simply looking for an easy setup, you can load Ubuntu with the "Windows Ubuntu Installer" - WUBI. This allows you to install Ubuntu "inside" Windows like a regular application, without the involvement of having to create a separate disk partition.  With these instructions, you can probably have the feature-complete environment installed with less friction than trying to load the software natively and having to figure out all the dependencies on your own.  
 
 Note: The Windows Installer option has been known to have issues booting Linux if you have multiple operating systems installed on various partitions on your hard drive.  If you only have Windows installed on your drive, you'll probably be OK.  YMMV.  But it's pretty painless to give it a try and see if it will work for you.  If it doesn't work, you simply uninstall Ubuntu from your Windows application programs.  If you can't get the Ubuntu "inside" Windows option to work, you still have as a fall back the option of installing Ubuntu to a separate partition on your hard drive.  
 
@@ -33,7 +33,7 @@ To install to a separate partition, install Ubuntu from a DVD and the install pr
 
 Since these options are based on Open Source software, they cost you nothing to try.  
 
-Note: the lines below that start with the "$" sign are commands that are to be executed at the command line from a terminal.  The "$" sign is analogous to the DOS "C:>" prompt; you don't actually type "$" when you execute the commands.  If you see the "#" character, it and the following text are comments, so don't include that as part of the command.  
+Note: the lines below that start with the "$" sign are commands that are to be executed at the Linux command line from a terminal.  The "$" sign is the Linux command line prompt, analogous to the DOS "C:>" prompt; you don't actually type "$" when you execute the commands.  If you see the "#" character, it and the following text are comments, so don't include that as part of the command.  
 
 So if you see:
 
@@ -55,7 +55,7 @@ http://www.ubuntu.com/desktop
 
 
 
-# LET'S BEGIN...
+# TO INSTALL TO UBUNTU OR UBUNTU-BASED LINUX...
 
 
 # INSTALL REQUIRED LINUX SOFTWARE
@@ -79,12 +79,12 @@ Install various required Linux packages:
 
 
 
-* Get .bashrc file from GIT repository.  Make edits to .bashrc file.  
+* Get .bashrc file from this GIT repository.  Make edits to .bashrc file.  
 
 
-Edit the RVM config lines in .bashrc.  See README file in .rvm directory for more info.  I find the instructions there to be cumbersome.  I simply put the required line at the top of the .bashrc file to achieve the same thing, instead of changing the logic of the code as suggested by the RVM README file.  This worked fine for me with a stock .bashrc file.  If this doesn't work for you, you can follow those instructions instead.  If you haven't made any changes to your .bashrc file, you can just grab the entire file from the GIT repository and overwrite/create your .bashrc with it.  These are the .bashrc file edits I made.  Add your own .bashrc changes, if any.
+Edit the RVM config lines in .bashrc.  See the README file in the .rvm directory for more info.  I find the instructions there to be cumbersome.  I simply put the required line at the top of the .bashrc file to achieve the same thing, instead of changing the logic of the code as suggested by the RVM README file.  This worked fine for me with a stock .bashrc file.  If this doesn't work for you, you can follow those instructions instead.  If you haven't made any changes to your .bashrc file, you can just grab the entire file from this GIT repository and overwrite/create your .bashrc with it.  These are the .bashrc file edits I made.  Add your own .bashrc changes, if any.
 
-Note to Windows users: to edit files you can run the included text editor.  Click on the System menu icon, click Accessories -> Text Editor  Choose/create the file in your home directory named ".bashrc".  Or downloaded the file from the GIT repository and copy to your home directory.
+Note to Windows users: to edit files you can run the included text editor.  Click on the System menu icon, click Accessories -> Text Editor  Choose/create the file in your home directory named ".bashrc".  Or downloaded the file from this GIT repository and copy to your home directory.
 
 
 This loads RVM into shell sessions, added:
@@ -100,7 +100,7 @@ When you start using multiple gemsets, it's easy to lose track of which gemset y
 
 
 
-*QUIT* terminal and open a new terminal, you should now be running the new environment.  Confirm RVM loaded correctly:
+*CLOSE* terminal window completely and open a new terminal window, you should now be running the new environment.  Confirm RVM loaded correctly:
 
     $ type rvm | head -1
 
@@ -158,7 +158,8 @@ This is the first exercise in the book in Chapter 3.  Here we set up the environ
 
 * Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with the Gemfile file from this GIT repository.
 
-
+Eg: 
+    $ cp path_to_directory/Gemfile  path_to_directory/sample_app/Gemfile
 
 Create bundle for project:
 
@@ -190,7 +191,7 @@ This is an exercise in the book, chap 3.  We'll run it to test that we've got fu
 You should be able to run rspec tests successfully:
 
     $ cd ~/rails_projects/sample_app    #Change to project root directory before running rspec
-    $ rspec spec/                #Ignore the "No DRb server" warning
+    $ rspec spec/                       #Ignore the "No DRb server" warning
     
     ...
 
@@ -206,10 +207,10 @@ Set up Spork:
     $ spork --bootstrap
 
 
-* Edit sample_app/spec/spec_helper.rb file per listing 3.12.  Replace that with repository file.
+* Edit sample_app/spec/spec_helper.rb file per listing 3.12.  Replace that with the version supplied by this repository.
 
 
-* Edit sample_app/config/application.rb per listing 3.13.  Replace that with repository file.  Note: if you are using this file for other then sample_app, you must change the module name in the file to reflect the project name.
+* Edit sample_app/config/application.rb per listing 3.13.  Replace that with version supplied by this repository.  Note: if you are using this file for other then sample_app, you must change the module name in the file to reflect the project name.
 
 
 
@@ -217,7 +218,7 @@ Set up Spork:
 We're ready to see the improved runtime of our tests.  Get a baseline on test time:
 
     $ cd ~/rails_projects/sample_app    #Change to project root directory before running rspec
-    $ time rspec spec/            #Ignore the "No DRb server" warning
+    $ time rspec spec/                  #Ignore the "No DRb server" warning
 
 Open up *another* terminal tab <shift+ctrl+T> and run Spork.  
 
@@ -256,7 +257,7 @@ You may now run autotest (Chap 3).  You will see some errors about variables (se
 
 
 
-Autotest will do an initial run of your tests, when it finishes, you will see a Growl notification of the test run.
+Autotest will do an initial run of your tests, when it finishes, you will see a Growl (pop-up) notification of the test run.
 
 If you go to another terminal screen and edit a monitored file in the project, then save it, you will then see a Growl notification that autotest has detected a file change and is running the tests automatically. Try just adding a trivial extra space to sample_app/app/controllers/pages_controller.rb, then saving it.  You should see a notification pop up when you save the file.  If you switch to the terminal tab where you ran autotest, you will see that it is running the rspec tests for that file.
 
