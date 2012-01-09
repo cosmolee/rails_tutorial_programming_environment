@@ -100,7 +100,7 @@ When you start using multiple gemsets, it's easy to lose track of which gemset y
 
 
 
-*CLOSE* terminal window completely and open a new terminal window, you should now be running the new environment.  Confirm RVM loaded correctly:
+After making the .bashrc file edits,  *CLOSE*  the terminal window completely and open a new terminal window, you should now be running the new environment.  Confirm RVM loaded correctly:
 
     $ type rvm | head -1
 
@@ -158,7 +158,8 @@ This is the first exercise in the book in Chapter 3.  Here we set up the environ
 
 * Create Gemfile with specific dependencies and versions.  Replace sample_app/Gemfile with the Gemfile file from this GIT repository.
 
-Eg: 
+    Eg: 
+    
     $ cp path_to_directory/Gemfile  path_to_directory/sample_app/Gemfile
 
 Create bundle for project:
