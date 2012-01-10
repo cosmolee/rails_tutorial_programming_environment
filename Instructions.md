@@ -44,18 +44,17 @@ You only actually type at the command line:
     echo howdy
 
 
-## Linux Download Links
+# DOWNLOAD LINKS TO GET LINUX
+
+http://www.ubuntu.com/start-download?distro=desktop&bits=32&release=lts
+Ubuntu 10.04 download
 
 http://linuxmint.com/
 Linux Mint 10 also has an "inside" Windows install option.  To access that, boot from the installation DVD.
 
-https://wiki.ubuntu.com/WubiGuide
-http://www.ubuntu.com/desktop
 
+https://wiki.ubuntu.com/WubiGuide   WUBI Guide for Windows installation
 
-
-
-# TO INSTALL TO UBUNTU-BASED LINUX...
 
 
 # INSTALL REQUIRED LINUX SOFTWARE
